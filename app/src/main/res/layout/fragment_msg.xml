@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fzq="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:focusable="true"
     android:background="#ffffff"
+    android:focusableInTouchMode="true"
     android:layout_height="match_parent"
     android:orientation="vertical">
     <!-- 使用系统的EditText，可以将hint居中，但是搜索图标却只能在左右两端或者
@@ -35,6 +37,8 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/msgFrag_recyclerView"
+        android:divider="#ffff0000"
+        android:dividerHeight="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 </LinearLayout>

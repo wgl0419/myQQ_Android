@@ -64,6 +64,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     case LOGIN_OK:
                         intent.setClass(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
+                        LoginActivity.this.finish();
                         break;
 
                 }

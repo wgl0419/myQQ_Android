@@ -6,15 +6,14 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import fzq.com.myqq.R;
 import fzq.com.myqq.base.Constants;
-import fzq.com.myqq.ui.fragment.ContactsFrag;
-import fzq.com.myqq.ui.fragment.MessageFrag;
-import fzq.com.myqq.ui.fragment.StatesFrag;
+import fzq.com.myqq.ui.fragment.contact.ContactsFrag;
+import fzq.com.myqq.ui.fragment.message.MessageFrag;
+import fzq.com.myqq.ui.fragment.state.StatesFrag;
 import fzq.com.myqq.utils.SharedPreferensUtil;
 
 

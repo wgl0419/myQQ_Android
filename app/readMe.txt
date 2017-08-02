@@ -21,3 +21,14 @@
 5. 在fzq.com.myqq.ui.activity.login包中的StartUpdateActivity.java和LoginActivity.java除了联网功能外，其他的流程基本完成。
 
 2017.07.27
+
+
+1. 主要写了fzq.com.myqq.ui.fragment.message包中的内容。
+
+2. 使用了RecyclerView显示了模拟的数据。
+
+3. 使用了MyItemDecoration为RecycleView添加了分割线，并且该分割线是在xml文件随时可以替换的。
+
+4. 完成了MySlideItem.java的绝大部分内容。但是使用起来和教程还有明显的不同和bug。
+
+2017.07.28

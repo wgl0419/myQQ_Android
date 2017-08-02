@@ -25,6 +25,9 @@
             android:name=".ui.activity.MainActivity"
             android:theme="@style/MyThemeNoTitle"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.activity.login.ForgetPwdActivity"/>
+        <activity android:name=".ui.activity.login.NewUserActivity"/>
+        <activity android:name=".ui.activity.login.ReadMeActivity"/>
     </application>
 
 </manifest>
