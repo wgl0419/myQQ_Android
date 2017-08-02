@@ -1,5 +1,6 @@
 package fzq.com.myqq.ui.activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,6 +12,7 @@ import android.widget.LinearLayout;
 
 import fzq.com.myqq.R;
 import fzq.com.myqq.base.Constants;
+import fzq.com.myqq.ui.activity.leftmenu.SettingsActivity;
 import fzq.com.myqq.ui.fragment.contact.ContactsFrag;
 import fzq.com.myqq.ui.fragment.message.MessageFrag;
 import fzq.com.myqq.ui.fragment.state.StatesFrag;
@@ -26,6 +28,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private SharedPreferences sp;
     private SharedPreferences.Editor editor;
+
+    //ScrollView -- 左边侧滑菜单栏部分
+    private LinearLayout layoutSetting, layoutNeight, layoutLimixiu;
+
+    //ScrollView -- 右边主界面部分
     private LinearLayout layoutMsg, layoutContact, layoutState;
     private MessageFrag msgFrag;
     private ContactsFrag contactsFrag;
@@ -60,18 +67,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sp = SharedPreferensUtil.getInstance();
         editor = sp.edit();
 
+        //ScrollView -- 左边侧滑菜单栏部分
+        layoutSetting = (LinearLayout) findViewById(R.id.leftMenu_layout_setting);
+        layoutNeight = (LinearLayout) findViewById(R.id.leftMenu_layout_neight);
+        layoutLimixiu = (LinearLayout) findViewById(R.id.leftMenu_layout_limixiu);
+        layoutSetting.setOnClickListener(this);
+        layoutNeight.setOnClickListener(this);
+        layoutLimixiu.setOnClickListener(this);
+
+        //ScrollView -- 右边主界面部分
         layoutMsg = (LinearLayout) findViewById(R.id.layoutMain_layout_msg);
         layoutContact = (LinearLayout) findViewById(R.id.layoutMain_layout_contact);
         layoutState = (LinearLayout) findViewById(R.id.layoutMain_layout_state);
-
         layoutMsg.setOnClickListener(this);
         layoutContact.setOnClickListener(this);
         layoutState.setOnClickListener(this);
     }
 
+    Intent newActIntent = null;
     @Override
     public void onClick(View view) {
+        newActIntent = new Intent();
         switch (view.getId()) {
+            case R.id.leftMenu_layout_setting:
+                newActIntent.setClass(this, SettingsActivity.class);
+                startActivity(newActIntent);
+                break;
+            case R.id.leftMenu_layout_neight:
+                break;
+            case R.id.leftMenu_layout_limixiu:
+                break;
+
             case R.id.layoutMain_layout_msg:
                 if (sp.getInt(Constants.mainFragIndex, 0) == 0) {
                     return;
@@ -100,14 +126,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         FragmentTransaction transaction0 = getSupportFragmentManager().beginTransaction();
         if (flag == 0) {
             transaction0.replace(R.id.layoutMain_layout_FragContainer, msgFrag).commit();
-            editor.putInt(Constants.mainFragIndex, 0).commit();
+            editor.putInt(Constants.mainFragIndex, 0);
         } else if (flag == 1) {
             transaction0.replace(R.id.layoutMain_layout_FragContainer, contactsFrag).commit();
-            editor.putInt(Constants.mainFragIndex, 1).commit();
+            editor.putInt(Constants.mainFragIndex, 1);
         } else if (flag == 2) {
             transaction0.replace(R.id.layoutMain_layout_FragContainer, statesFrag).commit();
-            editor.putInt(Constants.mainFragIndex, 2).commit();
+            editor.putInt(Constants.mainFragIndex, 2);
         }
+
+        editor.commit();
     }
 
 }

@@ -32,3 +32,11 @@
 4. 完成了MySlideItem.java的绝大部分内容。但是使用起来和教程还有明显的不同和bug。
 
 2017.07.28
+
+
+
+1. 主要写了fzq.com.myqq.ui.activity.setting包和fzq.com.myqq.ui.fragment.contact包的内容。把程序的流程搭建起来了。
+
+2. fzq.com.myqq.ui.activity.leftmenu.SettingsActivity.java类开始使用了ButterKnife框架。并在这个类中对ButterKnife框架进入的简单的验证和学习。
+
+2017.07.31

@@ -8,10 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".ui.activity.login.StartUpdateActivity"
-            android:screenOrientation="portrait">
+        <activity android:name=".ui.activity.login.StartUpdateActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -19,15 +18,25 @@
         </activity>
         <activity
             android:name=".ui.activity.login.LoginActivity"
-            android:theme="@style/MyThemeFullScreen"
-            android:screenOrientation="portrait" />
+            android:theme="@style/MyThemeFullScreen" />
         <activity
             android:name=".ui.activity.MainActivity"
-            android:theme="@style/MyThemeNoTitle"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.login.ForgetPwdActivity"/>
-        <activity android:name=".ui.activity.login.NewUserActivity"/>
-        <activity android:name=".ui.activity.login.ReadMeActivity"/>
+            android:theme="@style/MyThemeNoTitle" />
+        <activity android:name=".ui.activity.login.ForgetPwdActivity" />
+        <activity android:name=".ui.activity.login.NewUserActivity" />
+        <activity android:name=".ui.activity.login.ReadMeActivity" />
+        <activity android:name=".ui.activity.leftmenu.SettingsActivity" />
+        <activity android:name=".ui.activity.setting.AboutQQAndHelperActivity"/>
+        <activity android:name=".ui.activity.setting.AccountAndDeviceSafetyActivity"/>
+        <activity android:name=".ui.activity.setting.AssistantActivity"/>
+        <activity android:name=".ui.activity.setting.ChatRecodeActivity"/>
+        <activity android:name=".ui.activity.setting.ContactsAndSecretActivity"/>
+        <activity android:name=".ui.activity.setting.MsgNotifyActivity"/>
+        <activity android:name=".ui.activity.setting.PhoneNumberActivity"/>
+        <activity android:name=".ui.activity.setting.PlayWithFreeFlowActivity"/>
+        <activity android:name=".ui.activity.setting.QQDarenActivity"/>
+        <activity android:name=".ui.activity.setting.SpaceCleanActivity"/>
+        <activity android:name=".ui.activity.setting.UserManagerActivity"/>
     </application>
 
 </manifest>
