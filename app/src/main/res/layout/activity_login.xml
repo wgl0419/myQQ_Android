@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <SurfaceView
+        android:id="@+id/loginAct_surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+        <View
+            android:id="@+id/basicview"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_centerVertical="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/basicview"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/loginAct_edit_userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/loginAct_margin"
+                android:layout_marginRight="@dimen/loginAct_margin"
+                android:hint="@string/login_hint_name"
+                android:textSize="@dimen/loginAct_textSize" />
+
+            <EditText
+                android:id="@+id/loginAct_edit_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/loginAct_margin"
+                android:layout_marginRight="@dimen/loginAct_margin"
+                android:hint="@string/login_hint_pwd"
+                android:textSize="@dimen/loginAct_textSize" />
+
+            <Button
+                android:id="@+id/loginAct_btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/loginAct_margin"
+                android:layout_marginRight="@dimen/loginAct_margin"
+                android:layout_marginTop="@dimen/loginAct_margin"
+                android:background="#1FB3ED"
+                android:text="@string/login_btn_login"
+                android:textSize="@dimen/loginAct_textSize" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/basicview"
+            android:layout_marginLeft="@dimen/loginAct_margin"
+            android:layout_marginRight="@dimen/loginAct_margin"
+            android:layout_marginTop="@dimen/loginAct_margin">
+
+            <TextView
+                android:id="@+id/loginAct_text_forgetPwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_text_forgetPWD" />
+
+            <TextView
+                android:id="@+id/loginAct_text_newUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/login_text_newUser" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/loginAct_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_text_readMe1" />
+
+            <TextView
+                android:id="@+id/loginAct_text_readme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_text_readMe2" />
+
+        </LinearLayout>
+
+
+</RelativeLayout>

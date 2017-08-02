@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- StartUpdateActivity -->
+    <dimen name="start_update_act_margin">10dp</dimen>
+    <dimen name="start_update_act_textSize">22sp</dimen>
+
+
+    <!-- LoginActivity -->
+    <dimen name="loginAct_margin">20dp</dimen>
+    <dimen name="loginAct_textSize">24sp</dimen>
+</resources>

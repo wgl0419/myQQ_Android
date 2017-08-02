@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyQQ</string>
+
+    <!--LoginActivity -->
+    <string name="login_hint_name">QQ号/邮箱号/手机号</string>
+    <string name="login_hint_pwd">密码</string>
+    <string name="login_btn_login">登  录</string>
+    <string name="login_text_forgetPWD">忘记密码</string>
+    <string name="login_text_newUser">新用户注册</string>
+    <string name="login_text_readMe1">登录即代表阅读并同意</string>
+    <string name="login_text_readMe2">服务条款</string>
+</resources>
