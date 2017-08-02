@@ -9,4 +9,14 @@
     <string name="login_text_newUser">新用户注册</string>
     <string name="login_text_readMe1">登录即代表阅读并同意</string>
     <string name="login_text_readMe2">服务条款</string>
+
+    <string-array name="contactFrag_viewPager_indicator">
+        <item>好友</item>
+        <item>群</item>
+        <item>多人聊天</item>
+        <item>设备</item>
+        <item>通讯录</item>
+        <item>公众号</item>
+    </string-array>
+
 </resources>

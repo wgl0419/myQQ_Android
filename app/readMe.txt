@@ -40,3 +40,9 @@
 2. fzq.com.myqq.ui.activity.leftmenu.SettingsActivity.java类开始使用了ButterKnife框架。并在这个类中对ButterKnife框架进入的简单的验证和学习。
 
 2017.07.31
+
+
+
+1. 使用了自定义的ViewPager指示器 -- MyViewPagerIndicator.java，在主界面的联系人Fragment中实现了宽度可以超出屏幕，并且可以滑动的ViewPager指示器。并且在fzq.com.myqq.ui.fragment.contact包的ContactsFrag.java类中进行了验证。
+
+2017.08.02
