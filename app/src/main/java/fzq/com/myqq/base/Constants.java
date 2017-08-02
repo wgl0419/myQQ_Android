@@ -7,4 +7,5 @@ package fzq.com.myqq.base;
 public class Constants {
 
     public static String isFirstStartApp = "isFirstStartApp";
+    public static String mainFragIndex = "mainFragIndex";
 }

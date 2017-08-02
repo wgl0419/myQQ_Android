@@ -48,7 +48,7 @@ public class StartUpdateActivity extends AppCompatActivity {
         image = (ImageView) findViewById(R.id.startAct_image);
 
         if (sp.getBoolean(Constants.isFirstStartApp, false)) {
-            editor.putBoolean(Constants.isFirstStartApp, true);
+            editor.putBoolean(Constants.isFirstStartApp, true).commit();
             layout.setVisibility(View.VISIBLE);
             startUpdate();
         } else {

@@ -9,4 +9,7 @@
     <!-- LoginActivity -->
     <dimen name="loginAct_margin">20dp</dimen>
     <dimen name="loginAct_textSize">24sp</dimen>
+
+    <!-- MainActivity_leftMenu-->
+    <dimen name="leftMenu_margin">50dp</dimen>
 </resources>

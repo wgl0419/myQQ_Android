@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fzq="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!-- 使用系统的EditText，可以将hint居中，但是搜索图标却只能在左右两端或者
+    在hint的山下方，不能居中，因此，这里只好用自定义的EditText了
+    <EditText
+        android:layout_width="match_parent"
+        android:drawableTop="@drawable/icon_down"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:layout_height="wrap_content" />
+    -->
+
+    <fzq.com.myqq.ui.myview.MySearchView
+        android:id="@+id/msgFrag_searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:imeOptions="actionSearch"
+        fzq:imagewidth="30dp"
+        fzq:textColor="#0000ff"
+        fzq:textSize="16sp" />
+    <TextView
+        android:id="@+id/msgFrag_adviertisement"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:textSize="20sp"
+        android:text="用来插入广告的占坑的TextView。。。"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/msgFrag_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+</LinearLayout>

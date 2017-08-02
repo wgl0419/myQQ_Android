@@ -1,36 +1,30 @@
 package fzq.com.myqq.ui.activity.login;
 
 import android.content.Intent;
-import android.content.res.AssetFileDescriptor;
-import android.content.res.AssetManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import fzq.com.myqq.R;
 import fzq.com.myqq.ui.activity.MainActivity;
+import fzq.com.myqq.ui.myview.MyVideoView;
 
 /**
  * 登录界面
  */
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private SurfaceView surfaceView;
-    private MediaPlayer mediaPlayer;
-    private AssetManager assetManager;
-    private AssetFileDescriptor afd;
-
+    private MyVideoView myVideoView;
     private int screenWidth, screenHeight;
 
     private EditText editName, editPwd;
@@ -41,6 +35,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private Handler mainHandler;
     private static final int LOGIN_OK = 0x10;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,29 +49,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         screenWidth = dm.widthPixels;
         screenHeight = dm.heightPixels;
         System.out.println("啊啊啊 screenWidth: " + screenWidth + "screenHeight: " + screenHeight);
-        assetManager = getAssets();
 
-        surfaceView = (SurfaceView) findViewById(R.id.loginAct_surface);
-        mediaPlayer = new MediaPlayer();
-
-        surfaceView.getHolder().addCallback(new SurfaceViewListener());
         System.out.println("哈哈哈哈哈");
-        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer) {
-                System.out.println("play finish...");
-                startPlay();
-            }
-        });
+
 
         initViews();
         startPlay();
 
-        mainHandler = new Handler(){
+        mainHandler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
-                switch (msg.what){
+                switch (msg.what) {
                     case LOGIN_OK:
                         intent.setClass(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
@@ -85,6 +69,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
             }
         };
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        startPlay();
+    }
+
+    @Override
+    protected void onStop() {
+
+        myVideoView.stopPlayback();
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     private void initViews() {
@@ -128,21 +130,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
     private void login() {
-      mainHandler.sendEmptyMessage(LOGIN_OK);
+        mainHandler.sendEmptyMessage(LOGIN_OK);
     }
 
 
     private void startPlay() {
         try {
-            afd = assetManager.openFd("start_video2.mp4");
-            mediaPlayer.reset();
-            mediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
-            mediaPlayer.setDisplay(surfaceView.getHolder());
-            mediaPlayer.prepare();
+            myVideoView = (MyVideoView) findViewById(R.id.loginAct_myVideoView);
+            myVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.start_video2));
+            myVideoView.start();
 
-            surfaceView.setLayoutParams(new RelativeLayout.LayoutParams(screenWidth, screenHeight));
-
-            mediaPlayer.start();
+            myVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    myVideoView.start();
+                }
+            });
         } catch (Exception e) {
         }
     }

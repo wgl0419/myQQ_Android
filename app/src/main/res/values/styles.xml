@@ -12,7 +12,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="MYThemeFullScreen" parent="MyThemeNoTitle">
+    <style name="MyThemeFullScreen" parent="MyThemeNoTitle">
         <item name="android:windowFullscreen">true</item>
     </style>
 </resources>

@@ -19,9 +19,12 @@
         </activity>
         <activity
             android:name=".ui.activity.login.LoginActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/MYThemeFullScreen" />
-        <activity android:name=".ui.activity.MainActivity"/>
+            android:theme="@style/MyThemeFullScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:theme="@style/MyThemeNoTitle"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
