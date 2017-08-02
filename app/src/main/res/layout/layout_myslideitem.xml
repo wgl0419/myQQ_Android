@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+    <!-- 这里只能写match_parent或具体数字，不能用wrap_content的原因是：
+    在MySlideItem.java中只判断了MeasureSpec.EXACTLY-->
+
+    <fzq.com.myqq.ui.myview.MySlideItem
+        android:id="@+id/mySlideItem_slideItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/layout_myslideitem_left" />
+
+        <include layout="@layout/layout_myslideitem_right" />
+
+    </fzq.com.myqq.ui.myview.MySlideItem>
+
+</RelativeLayout>
